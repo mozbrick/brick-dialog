@@ -24,7 +24,12 @@
 
     ```html
     <brick-dialog>
-      Hi
+      <header>Up</header>
+      <section>Text</section>
+      <footer>
+        <button onclick="close()">cancel</button>
+        <a href=""></a>
+      </footer>
     </brick-dialog>
     ```
   Clicking on one of the <brick-items> sets the clicked item as selected.
