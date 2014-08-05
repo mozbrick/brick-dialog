@@ -1,0 +1,82 @@
+<link rel="import" href="../../brick-common/brick-common.html">
+
+<template>
+  <style>/**
+ * notice the () around teh attribute. that is because of
+ * :host([attr]) syntax to style the host node.
+ *
+ * example:
+ *  &([horizontal-lt-s/m/l]) { mixin() }
+ *  &([horizontal-gt-xs/s/m]) { mixin() }
+ *  &([horizontal-xs/s/m/l]) { mixin() }
+ *  &([horizontal]) { mixin() }
+ * would be created by:
+ * responsifyHost("& > ", horizontal, mixin)
+ */
+:host {
+  display: none;
+}
+:host > .dialog-container {
+  background: none repeat scroll 0% 0% rgba(199,199,199,0.85);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  z-index: 200;
+  font-style: italic;
+}
+:host([show]) {
+  display: block;
+}
+:host .dialog-container > .dialog {
+  background: #f4f4f4;
+  max-height: 75%;
+  max-width: 350px;
+  width: 90%;
+  margin: auto;
+}
+</style>
+  <style>:host {
+  padding: 0 14px;
+  box-sizing: border-box;
+}
+:host ::content > * {
+  color: #4d4d4d;
+  padding: 14px 0;
+  border-bottom: 1px solid #e7e7e7;
+}
+:host ::content > *:last-child {
+  border-bottom: none;
+}
+:host([horizontal]) {
+  padding: 14px 0;
+}
+:host([horizontal]) ::content > * {
+  padding: 0 14px;
+  border-bottom: none;
+  border-right: 1px solid #e7e7e7;
+}
+:host([horizontal]) ::content > *:last-child {
+  border-right: none;
+}
+</style>
+  
+  <div class="dialog-container">
+  	<div class="dialog">
+  		<content></content>
+  	</div>
+  </div>
+</template>
+
+
+<script src="brick-dialog.js"></script>

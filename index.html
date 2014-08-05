@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+    <title>brick-dialog</title>
+
+    <!-- Importing Polyfill -->
+    <script src="bower_components/platform/platform.js"></script>
+
+    <!-- Importing Custom Elemenent -->
+    <link rel="import" href="dist/brick-dialog.local.html">
+  </head>
+  <body>
+
+    <!-- Using Custom Element -->
+    <h3>Arrows everywhere</h3>
+    <button onclick="showDialog('mydialog')">open dialog</button>
+    <button onclick="closeDialog('mydialog')">open dialog</button>
+    <brick-dialog id="mydialog">
+      Hello there
+    </brick-dialog>
+
+    <script type="text/javascript">
+      function showDialog(dialog_id) {
+        var dialog = document.getElementById(dialog_id)
+        dialog.show()
+      }
+      function closeDialog(dialog_id) {
+        var dialog = document.getElementById(dialog_id)
+        dialog.close()
+      }
+    </script>
+
+  </body>
+</html>
