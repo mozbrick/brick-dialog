@@ -26,7 +26,7 @@
     var shadowRoot = this.createShadowRoot();
     shadowRoot.appendChild(template.content.cloneNode(true));
 
-    this.dialogContainer = shadowRoot.querySelector('.dialog-container')
+    this.dialogContainer = shadowRoot.querySelector('.dialog-container');
     this.dialogContainer.addEventListener('click', this.close.bind(this));
 
   };

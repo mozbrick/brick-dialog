@@ -62,16 +62,33 @@ responsifyHost(selector, attr, content) {
     align-items: center;
     justify-content: center;
     z-index: 200;
-    font-style: italic;
   }
   &([show]) {
     display: block;
   }
   .dialog-container > .dialog {
-    background: #F4F4F4;
     max-height: 75%;
     max-width: 350px;
     width: 90%;
     margin: auto;
+  }
+
+  ::content {
+    footer {
+      display: flex;
+    }
+    footer > * {
+      flex-grow: 1;
+      align-items: flex-start;
+      position: relative;
+    }
+
+    footer[vertical] {
+      flex-direction: column;
+    }
+    footer[vertical] > * {
+        position: relative;
+    }
+
   }
 }

@@ -33,41 +33,104 @@
   -ms-justify-content: center;
   justify-content: center;
   z-index: 200;
-  font-style: italic;
 }
 :host([show]) {
   display: block;
 }
 :host .dialog-container > .dialog {
-  background: #f4f4f4;
   max-height: 75%;
   max-width: 350px;
   width: 90%;
   margin: auto;
 }
+:host ::content footer {
+  display: flex;
+}
+:host ::content footer > * {
+  flex-grow: 1;
+  -webkit-align-items: flex-start;
+  -moz-align-items: flex-start;
+  -ms-align-items: flex-start;
+  align-items: flex-start;
+  position: relative;
+}
+:host ::content footer[vertical] {
+  flex-direction: column;
+}
+:host ::content footer[vertical] > * {
+  position: relative;
+}
 </style>
-  <style>:host {
-  padding: 0 14px;
-  box-sizing: border-box;
+  <style>:host .dialog-container > .dialog {
+  background: #f4f4f4;
 }
-:host ::content > * {
+:host ::content header {
+  text-align: center;
+  padding: 14px;
+}
+:host ::content header h1,
+:host ::content header h2,
+:host ::content header h3,
+:host ::content header h4,
+:host ::content header h5,
+:host ::content header h6 {
+  font-weight: lighter;
+  font-style: italic;
   color: #4d4d4d;
-  padding: 14px 0;
-  border-bottom: 1px solid #e7e7e7;
 }
-:host ::content > *:last-child {
-  border-bottom: none;
+:host ::content header h1 {
+  font-size: 1.5em;
+  line-height: 26px;
+  margin: 6px 0px 24px;
 }
-:host([horizontal]) {
-  padding: 14px 0;
+:host ::content section {
+  padding: 14px;
 }
-:host([horizontal]) ::content > * {
-  padding: 0 14px;
-  border-bottom: none;
-  border-right: 1px solid #e7e7e7;
+:host ::content section[center] {
+  text-align: center;
 }
-:host([horizontal]) ::content > *:last-child {
-  border-right: none;
+:host ::content footer > * {
+  cursor: pointer;
+  background: #fff;
+  text-align: center;
+  font-style: italic;
+  font-weight: lighter;
+  height: 50px;
+  margin: 0px;
+  border: 0px none;
+  padding: 0rem 25px;
+  color: #00caf2;
+  font-size: inherit;
+}
+:host ::content footer > *:after {
+  content: " ";
+  position: absolute;
+  height: 60%;
+  width: 1px;
+  top: 20%;
+  right: 0px;
+  background: none repeat scroll 0% 0% #e7e7e7;
+  z-index: 1;
+}
+:host ::content footer > *:active {
+  background-color: #00caf2;
+  color: #fff;
+  transition: none;
+}
+:host ::content footer > *:active:after {
+  z-index: -1;
+}
+:host ::content footer > *:last-child:after {
+  display: none;
+}
+:host ::content footer[vertical] > *:after {
+  position: absolute;
+  width: 95%;
+  height: 1px;
+  bottom: 0px;
+  left: 2.5%;
+  top: 49px;
+  background: #e7e7e7;
 }
 </style>
   
