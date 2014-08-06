@@ -51,22 +51,21 @@ responsifyHost(selector, attr, content) {
 
 :host {
   display: none;
-  & > .dialog-container {
-    background: none repeat scroll 0% 0% rgba(199, 199, 199, 0.85);
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 200;
-  }
+
+  background: none repeat scroll 0% 0% rgba(199, 199, 199, 0.85);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+
   &([show]) {
-    display: block;
+    display: flex;
   }
-  .dialog-container > .dialog {
+  & > .dialog {
     max-height: 75%;
     max-width: 350px;
     width: 90%;

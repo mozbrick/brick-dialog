@@ -15,8 +15,6 @@
  */
 :host {
   display: none;
-}
-:host > .dialog-container {
   background: none repeat scroll 0% 0% rgba(199,199,199,0.85);
   position: fixed;
   top: 0px;
@@ -35,9 +33,9 @@
   z-index: 200;
 }
 :host([show]) {
-  display: block;
+  display: flex;
 }
-:host .dialog-container > .dialog {
+:host > .dialog {
   max-height: 75%;
   max-width: 350px;
   width: 90%;
@@ -61,7 +59,7 @@
   position: relative;
 }
 </style>
-  <style>:host .dialog-container > .dialog {
+  <style>:host > .dialog {
   background: #f4f4f4;
 }
 :host ::content header {
@@ -125,20 +123,18 @@
 }
 :host ::content footer[vertical] > *:after {
   position: absolute;
-  width: 90%;
+  width: 95%;
   height: 1px;
   bottom: 0px;
-  left: 5%;
+  left: 2.5%;
   top: 49px;
   background: #e7e7e7;
 }
 </style>
   
-  <div class="dialog-container">
   	<div class="dialog">
   		<content></content>
   	</div>
-  </div>
 </template>
 
 
