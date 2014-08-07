@@ -51,7 +51,6 @@ responsifyHost(selector, attr, content) {
 
 :host {
   display: none;
-
   background: none repeat scroll 0% 0% rgba(199, 199, 199, 0.85);
   position: fixed;
   top: 0px;
@@ -65,6 +64,7 @@ responsifyHost(selector, attr, content) {
   &([show]) {
     display: flex;
   }
+
   & > .dialog {
     max-height: 75%;
     max-width: 350px;

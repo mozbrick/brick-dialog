@@ -17,18 +17,38 @@ $brand-blue = #00CAF2
         opacity: 0;
     }
 }
+@keyframes translateIn {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
 
 :host {
   opacity: 0;
 
 
-  &(.in) {
-    opacity: 1;
-    transition: all 0.3s linear;
+  &([show="in"]) {
+    opacity:1;
+    animation-name: fadeIn;
+    animation-duration: 0.3s;
+    & > .dialog {
+      opacity: 1;
+      animation-name: translateIn;
+      animation-duration: 0.3s;
+      animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    }
   }
-  &(.out) {
-    opacity: 0;
-    transition: all 0.3s linear;
+  &([show="out"]) {
+    opacity: 1;
+    animation-name: fadeOut;
+    animation-delay: 0.3s;
+    animation-duration: 0.3s;
   }
 
 

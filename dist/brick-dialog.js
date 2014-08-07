@@ -50,18 +50,19 @@
     dialog.setAttribute('show','');
 
     skipFrame(function() {
-      dialog.setAttribute('class', 'in');
-    })
+      dialog.setAttribute('show', 'in');
+    });
   };
 
   BrickDialogElementPrototype.close = function() {
-
-    
     var dialog = this;
-    dialog.setAttribute('class', 'out');
-    skipFrame(function() {
-      dialog.removeAttribute('show');
-    })
+    dialog.setAttribute('show', 'out');
+
+    var transitionendHandler = function() {
+      dialog.removeAttribute('show')
+      dialog.removeEventListener('animationend', transitionendHandler);
+    };
+    dialog.addEventListener('animationend', transitionendHandler);
   };
 
   // Register the element
