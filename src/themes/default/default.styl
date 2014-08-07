@@ -34,21 +34,28 @@ $brand-blue = #00CAF2
 
 
   &([show="in"]) {
+
     opacity:1;
-    animation-name: fadeIn;
-    animation-duration: 0.3s;
+    -moz-animation: fadeIn 0.3s;
+    -webkit-animation: fadeIn 0.3s;
+    animation: fadeIn 0.3s;
+
     & > .dialog {
+
       opacity: 1;
-      animation-name: translateIn;
-      animation-duration: 0.3s;
-      animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+      -moz-animation: translateIn 0.3s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+      -webkit-animation: translateIn 0.3s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+      animation: translateIn 0.3s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+
     }
   }
+
   &([show="out"]) {
+
     opacity: 1;
-    animation-name: fadeOut;
-    animation-delay: 0.3s;
-    animation-duration: 0.3s;
+    -moz-animation: fadeOut 0.3s;
+    -webkit-animation: fadeOut 0.3s;
+    animation: fadeOut 0.3s;
   }
 
 
