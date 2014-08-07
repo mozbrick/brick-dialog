@@ -24,6 +24,7 @@
     "platform": "Polymer/platform"
   },
   "devDependencies": {
-    "brick-action": "mozbrick/brick-action"
+    "brick-action": "mozbrick/brick-action",
+    "brick-input": "mozbrick/brick-input"
   }
 }
