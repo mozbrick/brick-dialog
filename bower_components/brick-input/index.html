@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+    <title>brick-input</title>
+
+    <!-- Importing Polyfill -->
+    <script src="bower_components/platform/platform.js"></script>
+
+    <!-- Importing Custom Elemenent -->
+    <link rel="import" href="dist/brick-input.local.html">
+    <style>
+      body,html {
+        margin: 0;
+        padding: 15px;
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <brick-input name="Name" label="Name" pattern="[A-Z]" error="You are wrong!"></brick-input>
+    <brick-input name="E-Mail" label="E-Mail" type="email"></brick-input>
+    <brick-input name="Password" label="Password" type="password"></brick-input>
+    <brick-input name="Search" label="Search" type="search"></brick-input>
+    <brick-input name="multi" label="Multiline" rows="5" multiline></brick-input>
+  </body>
+</html>

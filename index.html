@@ -11,6 +11,7 @@
     <!-- Importing Custom Elemenent -->
     <link rel="import" href="dist/brick-dialog.local.html">
     <link rel="import" href="bower_components/brick-action/dist/brick-action.html">
+    <link rel="import" href="bower_components/brick-input/dist/brick-input.html">
 
     <style type="text/css">
     body {
@@ -30,6 +31,9 @@
     <button onclick="showDialog('vertical')">vertical options with onclick</button>
     <brick-action target="controls" action="show">
       <button>controls</button>
+    </brick-action>
+    <brick-action target="input" action="show">
+      <button>input dialog</button>
     </brick-action>
 
 
@@ -74,6 +78,17 @@
         </brick-action>
         <brick-action target="controls" action="hide">
           <button>five</button>
+        </brick-action>
+      </footer>
+    </brick-dialog>
+
+    <brick-dialog id="input">
+      <section>
+        <brick-input label="hello" placeholder="example"></brick-input>
+      </section>
+      <footer vertical>
+        <brick-action target="input" action="hide">
+          <button>send</button>
         </brick-action>
       </footer>
     </brick-dialog>
