@@ -35,12 +35,12 @@
     shadowRoot.appendChild(template.content.cloneNode(true));
 
     
-    this.addEventListener('click', this.close.bind(this));
+    this.addEventListener('click', this.hide.bind(this));
 
   };
 
   BrickDialogElementPrototype.detachedCallback = function() {
-    this.removeEventListener('click', this.close.bind(this));
+    this.removeEventListener('click', this.hide.bind(this));
   };
 
 
@@ -54,12 +54,12 @@
     });
   };
 
-  BrickDialogElementPrototype.close = function() {
+  BrickDialogElementPrototype.hide = function() {
     var dialog = this;
     dialog.setAttribute('show', 'out');
 
     var animationendHandler = function() {
-      dialog.removeAttribute('show')
+      dialog.removeAttribute('show');
       dialog.removeEventListener('animationend', animationendHandler);
       dialog.removeEventListener('webkitAnimationEnd', animationendHandler);
     };
