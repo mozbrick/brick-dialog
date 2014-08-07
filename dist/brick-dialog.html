@@ -107,7 +107,7 @@
 :host ::content section[center] {
   text-align: center;
 }
-:host ::content footer > * {
+:host ::content footer button {
   cursor: pointer;
   background: #fff;
   text-align: center;
@@ -119,6 +119,12 @@
   padding: 0rem 25px;
   color: #00caf2;
   font-size: inherit;
+  width: 100%;
+}
+:host ::content footer button:active {
+  background-color: #00caf2;
+  color: #fff;
+  transition: none;
 }
 :host ::content footer > *:after {
   content: " ";
@@ -129,11 +135,6 @@
   right: 0px;
   background: none repeat scroll 0% 0% #e7e7e7;
   z-index: 1;
-}
-:host ::content footer > *:active {
-  background-color: #00caf2;
-  color: #fff;
-  transition: none;
 }
 :host ::content footer > *:active:after {
   z-index: -1;
