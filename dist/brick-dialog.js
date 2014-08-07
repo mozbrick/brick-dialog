@@ -37,6 +37,11 @@
     
     this.addEventListener('click', this.hide.bind(this));
 
+    var dialog = shadowRoot.querySelector('.dialog');
+    dialog.addEventListener('click', function(e) {
+      e.stopPropagation();
+    });
+
   };
 
   BrickDialogElementPrototype.detachedCallback = function() {
@@ -54,12 +59,7 @@
     });
   };
 
-  BrickDialogElementPrototype.hide = function(e) {
-    // The container should trigger a close, not the children
-    if (e && e.impl && e.impl.target.nodeName !== 'BRICK-DIALOG') {
-      return;
-    }
-
+  BrickDialogElementPrototype.hide = function() {
     var dialog = this;
     dialog.setAttribute('show', 'out');
 
