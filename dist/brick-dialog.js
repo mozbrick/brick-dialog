@@ -58,11 +58,14 @@
     var dialog = this;
     dialog.setAttribute('show', 'out');
 
-    var transitionendHandler = function() {
+    var animationendHandler = function() {
       dialog.removeAttribute('show')
-      dialog.removeEventListener('animationend', transitionendHandler);
+      dialog.removeEventListener('animationend', animationendHandler);
+      dialog.removeEventListener('webkitAnimationEnd', animationendHandler);
     };
-    dialog.addEventListener('animationend', transitionendHandler);
+
+    dialog.addEventListener('animationend', animationendHandler);
+    dialog.addEventListener('webkitAnimationEnd', animationendHandler);
   };
 
   // Register the element
