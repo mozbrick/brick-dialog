@@ -23,12 +23,11 @@
   <body>
 
     <!-- Using Custom Element -->
-    <h3>Arrows everywhere</h3>
+    <h3>Brick dialog</h3>
     <brick-action target="horizontal" action="show">
-      <button>horizontal menu</button>
+      <button>vertical options with brick-action</button>
     </brick-action>
-
-    <button onclick="showDialog('vertical')">horizontal menu</button>
+    <button onclick="showDialog('vertical')">vertical options with onclick</button>
 
 
     <brick-dialog id="horizontal">
@@ -47,9 +46,8 @@
     </brick-dialog>
 
     <brick-dialog id="vertical">
-      <header><h1>This is the header</h1></header>
       <section center>
-        Are you sure you want to delete this?
+        <p>Are you sure you want to delete this?</p>
       </section>
       <footer vertical>
         <button onclick="hideDialog('vertical')">cancel</button>
