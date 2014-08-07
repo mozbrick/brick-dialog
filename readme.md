@@ -24,15 +24,32 @@
 
     ```html
     <brick-dialog>
-      <header>Up</header>
-      <section>Text</section>
+      <header>Here your header</header>
+      <section>Here your content</section>
       <footer>
-        <button onclick="close()">cancel</button>
-        <a href=""></a>
+
+        <brick-action target="horizontal" action="hide">
+          <button>cancel</button>
+        </brick-action>
+
+        <brick-action target="horizontal" action="hide">
+          <button>cancel</button>
+        </brick-action>
+
       </footer>
     </brick-dialog>
     ```
   Clicking on one of the <brick-items> sets the clicked item as selected.
+
+## brick-dialog details
+
+### Methods
+
+Method        | Parameters   | Returns     | Description
+---           | ---          | ---         | ---
+`show()`      | -            | -           | Show the dialog
+`hide()`      | -            | -           | Hide the dialog
+
 
 ## Development
 
