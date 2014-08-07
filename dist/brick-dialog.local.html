@@ -58,7 +58,18 @@
   position: relative;
 }
 </style>
-  <style>:host > .dialog {
+  <style>:host {
+  opacity: 0;
+}
+:host(.in) {
+  opacity: 1;
+  transition: all 0.3s linear;
+}
+:host(.out) {
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+:host > .dialog {
   background: #f4f4f4;
 }
 :host ::content header {
@@ -128,6 +139,70 @@
   left: 2.5%;
   top: 49px;
   background: #e7e7e7;
+}
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-o-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 </style>
   

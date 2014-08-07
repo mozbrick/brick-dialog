@@ -4,6 +4,14 @@
 
   var currentScript = document._currentScript || document.currentScript;
 
+  var requestAnimationFrame = window.requestAnimationFrame ||
+                              window.webkitRequestAnimationFrame ||
+                              function (fn) { setTimeout(fn, 16); };
+
+  var skipFrame = function(fn){
+    requestAnimationFrame(function(){ requestAnimationFrame(fn); });
+  };
+
   var BrickDialogElementPrototype = Object.create(HTMLElement.prototype);
 
   BrickDialogElementPrototype.attachedCallback = function() {
@@ -38,17 +46,22 @@
 
 
   BrickDialogElementPrototype.show = function() {
-    var isHidden = !this.hasAttribute('show');
-    if (isHidden) {
-      this.setAttribute('show','');
-    }
+    var dialog = this;
+    dialog.setAttribute('show','');
+
+    skipFrame(function() {
+      dialog.setAttribute('class', 'in');
+    })
   };
 
   BrickDialogElementPrototype.close = function() {
-    var isShown = this.hasAttribute('show');
-    if (isShown) {
-      this.removeAttribute('show');
-    }
+
+    
+    var dialog = this;
+    dialog.setAttribute('class', 'out');
+    skipFrame(function() {
+      dialog.removeAttribute('show');
+    })
   };
 
   // Register the element

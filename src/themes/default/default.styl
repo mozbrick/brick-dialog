@@ -1,7 +1,36 @@
 @import '../../../bower_components/brick-common/styles/themes/default/params'
 $brand-blue = #00CAF2
 
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 :host {
+  opacity: 0;
+
+
+  &(.in) {
+    opacity: 1;
+    transition: all 0.3s linear;
+  }
+  &(.out) {
+    opacity: 0;
+    transition: all 0.3s linear;
+  }
+
 
   & > .dialog {
     background: $color-iota;
