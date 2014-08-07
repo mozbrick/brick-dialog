@@ -84,7 +84,7 @@ $brand-blue = #00CAF2
         text-align: center;
       }
     }
-    footer > * {
+    footer button {
       cursor: pointer;
       background: $color-beta;
       text-align: center;
@@ -96,7 +96,17 @@ $brand-blue = #00CAF2
       padding: 0rem 25px;
       color: $brand-blue;
       font-size: inherit;
+      width: 100%;
 
+      &:active {
+          background-color: $brand-blue;
+          color: #fff;
+          transition: none;
+      }
+    }
+
+    // divisor horizontal
+    footer > * {
       &:after {
         content: " ";
         position: absolute;
@@ -107,11 +117,6 @@ $brand-blue = #00CAF2
         background: none repeat scroll 0% 0% #E7E7E7;
         z-index: 1;
       }
-      &:active {
-          background-color: $brand-blue;
-          color: #fff;
-          transition: none;
-      }
       &:active:after {
           z-index: -1;
       }
@@ -120,6 +125,8 @@ $brand-blue = #00CAF2
           display: none;
       }
     }
+
+    // divisor vertical
     footer[vertical] > *:after {
         position: absolute;
         width: 95%;
