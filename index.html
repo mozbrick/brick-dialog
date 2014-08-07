@@ -28,6 +28,9 @@
       <button>vertical options with brick-action</button>
     </brick-action>
     <button onclick="showDialog('vertical')">vertical options with onclick</button>
+    <brick-action target="controls" action="show">
+      <button>controls</button>
+    </brick-action>
 
 
     <brick-dialog id="horizontal">
@@ -52,6 +55,26 @@
       <footer vertical>
         <button onclick="hideDialog('vertical')">cancel</button>
         <button onclick="hideDialog('vertical')">open</button>
+      </footer>
+    </brick-dialog>
+
+    <brick-dialog id="controls">
+      <footer vertical>
+        <brick-action target="controls" action="hide">
+          <button>one</button>
+        </brick-action>
+        <brick-action target="controls" action="hide">
+          <button>two</button>
+        </brick-action>
+        <brick-action target="controls" action="hide">
+          <button>three</button>
+        </brick-action>
+        <brick-action target="controls" action="hide">
+          <button>four</button>
+        </brick-action>
+        <brick-action target="controls" action="hide">
+          <button>five</button>
+        </brick-action>
       </footer>
     </brick-dialog>
 
