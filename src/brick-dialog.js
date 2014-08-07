@@ -54,7 +54,12 @@
     });
   };
 
-  BrickDialogElementPrototype.hide = function() {
+  BrickDialogElementPrototype.hide = function(e) {
+    // The container should trigger a close, not the children
+    if (e && e.impl && e.impl.target.nodeName !== 'BRICK-DIALOG') {
+      return;
+    }
+
     var dialog = this;
     dialog.setAttribute('show', 'out');
 
