@@ -26,7 +26,7 @@
     <brick-dialog>
       <header>Here your header</header>
       <section>Here your content</section>
-      <footer>
+      <footer [vertical]>
 
         <brick-action target="horizontal" action="hide">
           <button>cancel</button>
