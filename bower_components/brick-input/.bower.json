@@ -1,0 +1,34 @@
+{
+  "name": "brick-input",
+  "homepage": "https://github.com/mozbrick/brick-input",
+  "authors": [
+    "mozilla"
+  ],
+  "description": "A Brick input field.",
+  "main": "dist/brick-input.html",
+  "keywords": [
+    "brick",
+    "webcomponents"
+  ],
+  "license": "ISC",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "platform": "Polymer/platform",
+    "brick-common": "~0.1.4"
+  },
+  "_release": "abfdc1029e",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "abfdc1029e2dc9d466ea089df4fce46a21d52464"
+  },
+  "_source": "git://github.com/mozbrick/brick-input.git",
+  "_target": "*",
+  "_originalSource": "mozbrick/brick-input"
+}
