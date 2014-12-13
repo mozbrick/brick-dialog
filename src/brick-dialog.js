@@ -34,7 +34,7 @@
     var shadowRoot = this.createShadowRoot();
     shadowRoot.appendChild(template.content.cloneNode(true));
 
-    
+
     this.addEventListener('click', this.hide.bind(this));
 
     var dialog = shadowRoot.querySelector('.dialog');
@@ -52,6 +52,7 @@
 
   BrickDialogElementPrototype.show = function() {
     var dialog = this;
+    if(dialog.getAttribute('show')) return;
     dialog.setAttribute('show','');
 
     skipFrame(function() {
